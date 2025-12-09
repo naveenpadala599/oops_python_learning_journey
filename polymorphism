@@ -1,0 +1,29 @@
+class animal:
+    def __init__(self, name, species):
+        self.name=name
+        self.species=species
+        self.__age=0
+    def make_sound(self):
+        print(f"{self.name} makes a sound.")
+    def get_age(self):
+        return self.__age
+    def set_age(self,age):
+        if age>=0:
+            self.__age=age
+        else:
+            print("age must be positve.")
+class farm_animal(animal):
+    pass
+class dog(farm_animal):
+    def make_sound(self):
+        print(f"{self.name} says woof!")
+class cat(farm_animal):
+    def make_sound(self):
+        print(f"{self.name} says meow!")
+animals=[dog("buddy", "dog"),
+        cat("kitty","cat"),
+        dog("max","dog"),
+        cat("snowy","cat")]
+for a in animals:
+    a.make_sound()
+        

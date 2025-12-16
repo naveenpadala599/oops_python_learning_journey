@@ -1,0 +1,40 @@
+class car:
+    total_car=0
+    def __init__(self, color, model, speed=0):
+        self.color=color
+        self.model=model
+        self.speed=speed
+        
+        
+        car.total_car+=1
+        
+        
+    
+    def accelerate(self):
+        self.speed+=10
+        print(f"{self.model} accelerated to {self.speed}km/h.")
+        
+        
+    def brake(self):
+        if self.speed-5<0:
+            self.speed=0
+        else:    
+            self.speed-=5
+        print(f"{self.model} slowed down to {self.speed}km/h") 
+    
+car1 = car("Red", "Toyota Supra")
+car2 = car("Blue", "Ford Mustang")
+car3 = car("Black", "Nissan GTR") 
+
+car1.accelerate()
+car1.accelerate()
+car1.brake()
+
+car2.accelerate()
+car2.brake()
+
+car3.accelerate()
+
+
+
+print(car.total_car)

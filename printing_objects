@@ -1,0 +1,26 @@
+class Car:
+    total_cars=0
+    
+    def __init__(self, color, model):
+        self.color=color
+        self.model=model
+        self.speed=0
+        
+        
+        Car.total_cars+=1
+        
+    def accelarate(self):
+        self.speed+=5
+        print(f"{self.model} accelarated to {self.speed}km/h.")
+    def brake(self):
+        if self.speed-5<=0:
+            self.speed=0
+            print(f"{self.model} is at not moving.")
+        else:
+            self.speed-=5
+            print(f"{self.model} slowed down to {self.speed}km/h.")
+    def __str__(self):
+        return f"model={self.model}, color={self.color}, speed={self.speed}km/h."
+        
+car1=Car("red", "tyota supra")
+print(car1)

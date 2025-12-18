@@ -1,0 +1,7 @@
+v="aeiou"
+s="my name is naveen."
+d={"a":0,"e":0,"i":0,"o":0,"u":0}
+for i in s:
+    if i in v:
+        d[i]+=1
+print(d)  

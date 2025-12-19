@@ -1,0 +1,48 @@
+class Vehicle:
+    def __init__(self, wheels):
+        self.wheels=wheels
+
+class Car(Vehicle):
+    total_cars=0
+    
+    def __init__(self, color, model):
+        super().__init__(4)
+        self.color=color
+        self.model=model
+        self.speed=0
+        
+        Car.total_cars+=1
+    
+    
+    def accelerate(self):
+        if self.speed+10>=200:
+            self.speed=200
+            print(f"{self.model} accelerated to {self.speed} km/h.")
+        else:
+            self.speed+=10
+            print(f"{self.model} accelerated to {self.speed} km/h.")
+    
+    
+    def brake(self):
+        if self.speed-10<=0:
+            self.speed=0
+            print(f"{self.model} slowed down to {self.speed} km/h.")
+        else:
+            self.speed-=10
+            print(f"{self.model} slowed down to {self.speed} km/h.")
+    
+    def stop(self):
+        self.speed=0
+        print(f"{self.model} stopped moving.")
+    
+    def __str__(self):
+        return(f"color:{self.color},model:{self.model},speed:{self.speed}km/h,wheels:{self.wheels}")
+    
+car1=Car("red","toyota supra")
+print(car1)
+car1.accelerate()
+print("Wheels:", car1.wheels)
+print("Total cars:", Car.total_cars)
+print(car1)
+        
+            
